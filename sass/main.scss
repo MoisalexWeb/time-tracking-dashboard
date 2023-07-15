@@ -1,0 +1,214 @@
+@use 'base';
+@use 'colors' as c;
+
+$radius: 15px;
+$padding-card: 20px;
+
+
+/* Cards styles */
+.cards__container {
+	display: grid;
+	grid-gap: 20px;
+
+	@media screen and (min-width: 1024px) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 200px);
+		grid-gap: 30px;
+	}
+}
+
+@mixin flex() {
+	display: flex;
+	align-items: center;
+}
+
+.card {
+	border-radius: $radius;
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: scale(1.03);
+	}
+}
+
+.card__person {
+	background-color: c.$blue;
+	border-radius: $radius;
+	padding: 35px 20px;
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-gap: 15px;
+	position: relative;
+	z-index: 10;
+
+	&-img {
+		width: 50px;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		object-fit: cover;
+
+		@media screen and (min-width: 1024px) {
+			width: 70px;
+		}
+	}
+
+	&__texts p {
+		color: c.$pale-blue;
+		font-size: 15px;
+	}
+
+	&__texts h1 {
+		color: #fff;
+		font-size: 22px;
+		font-weight: 300;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 40px;
+			margin-top: 5px;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		grid-template-columns: 1fr;
+		grid-gap: 30px;
+		height: 70%;
+	}
+}
+
+.card__links {
+	background-color: c.$dark-blue;
+	padding: $padding-card;
+	padding-top: $padding-card + 10;
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+	margin-top: -10px;
+	@include flex();
+	justify-content: space-between;
+
+	@media screen and (min-width: 1024px) {
+		flex-direction: column;
+		align-items: start;
+		height: 33%;
+	}
+
+	.btn-data {
+		color: c.$pale-blue;
+		text-decoration: none;
+		cursor: pointer;
+		font-weight: 400;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: #fff;
+		}
+
+		&.active {
+			color: #fff;
+		}
+	}
+}
+
+.card__content {
+	background-color: c.$dark-blue;
+	border-radius: $radius;
+	padding: $padding-card;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 15px;
+	position: relative;
+	margin-top: -10px;
+	transition: background-color 0.2s ease;
+
+	@media screen and (min-width: 1024px) {
+		height: 200px - 40px;
+	}
+
+	&__header {
+		@include flex();
+		justify-content: space-between;
+
+		&-title {
+			color: #fff;
+			font-weight: 500;
+			font-size: 15px;
+		}
+
+		&__button {
+			border: none;
+			outline: none;
+			background: none;
+			cursor: pointer;
+		}
+	}
+
+	&__texts {
+		@include flex();
+		justify-content: space-between;		
+
+		&-title {
+			color: #fff;
+			font-weight: 300;
+			font-size: 27px;
+
+			@media screen and (min-width: 1024px) {
+				font-size: 40px;
+			}
+		}
+
+		&-paragraph {
+			font-size: 14px;
+			font-weight: 300;
+			color: c.$pale-blue;
+		}
+
+		@media screen and (min-width: 1024px) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+}
+
+/* Card top background */
+.card.card--main {
+	@media screen and (min-width: 1024px) {
+		grid-column: 1/2;
+		grid-row: 1/3;
+	}
+}
+
+@mixin card-background($color, $url) {
+	background-color:  $color;
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+}
+
+.card__background {
+	height: 50px;
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+.card.card--work .card__background {
+	@include card-background(c.$color-work, '../images/icon-work.svg');
+}
+
+.card.card--play .card__background {
+	@include card-background(c.$color-play, '../images/icon-play.svg');
+}
+
+.card.card--study .card__background {
+	@include card-background(c.$color-study, '../images/icon-study.svg');
+}
+
+.card.card--exercise .card__background {
+	@include card-background(c.$color-exercise, '../images/icon-exercise.svg');
+}
+
+.card.card--social .card__background {
+	@include card-background(c.$color-social, '../images/icon-social.svg');
+}
+
+.card.card--self-care .card__background {
+	@include card-background(c.$color-self-care, '../images/icon-self-care.svg');
+}

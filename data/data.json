@@ -1,0 +1,80 @@
+{
+    "Weekly": {
+        "work": {
+            "hours": "32hrs",
+            "previous": "Previous - 36hrs"
+        },
+        "play": {
+            "hours": "10hrs",
+            "previous": "Previous - 8hrs"
+        },
+        "study": {
+            "hours": "4hrs",
+            "previous": "Previous - 7hrs"
+        },
+        "exercise": {
+            "hours": "4hrs",
+            "previous": "Previous - 5hrs"
+        },
+        "social": {
+            "hours": "5hrs",
+            "previous": "Previous - 10hrs"
+        },
+        "self-care": {
+            "hours": "2hrs",
+            "previous": "Previous - 2hrs"
+        }
+    },
+    "Daily": {
+        "work": {
+            "hours": "5hrs",
+            "previous": "Previous - 7hrs"
+        },
+        "play": {
+            "hours": "1hrs",
+            "previous": "Previous - 2hrs"
+        },
+        "study": {
+            "hours": "0hrs",
+            "previous": "Previous - 1hrs"
+        },
+        "exercise": {
+            "hours": "1hrs",
+            "previous": "Previous - 1hrs"
+        },
+        "social": {
+            "hours": "1hrs",
+            "previous": "Previous - 3hrs"
+        },
+        "self-care": {
+            "hours": "0hrs",
+            "previous": "Previous - 1hrs"
+        }
+    },
+    "Monthly": {
+        "work": {
+            "hours": "103hrs",
+            "previous": "Previous - 128hrs"
+        },
+        "play": {
+            "hours": "23hrs",
+            "previous": "Previous - 29hrs"
+        },
+        "study": {
+            "hours": "13hrs",
+            "previous": "Previous - 19hrs"
+        },
+        "exercise": {
+            "hours": "11hrs",
+            "previous": "Previous - 18hrs"
+        },
+        "social": {
+            "hours": "21hrs",
+            "previous": "Previous - 23hrs"
+        },
+        "self-care": {
+            "hours": "7hrs",
+            "previous": "Previous - 11hrs"
+        }
+    }
+}
